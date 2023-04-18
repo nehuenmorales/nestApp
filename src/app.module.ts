@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { TaskController } from './task/task.controller';
+import { TaskController } from './task/controller/task.controller';
 import { TaskModule } from './task/task.module';
-import { task } from './task/task.entity';
-import { TaskService } from './task/task.service';
+import { task } from './task/entities/task.entity';
+import { TaskService } from './task/service/task.service';
 import { UserModule } from './user/user.module';
 
 @Module({

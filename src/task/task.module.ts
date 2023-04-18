@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { TaskController } from './task.controller';
-import { task } from './task.entity';
-import { TaskService } from './task.service';
+import { TaskController } from './controller/task.controller';
+import { task } from './entities/task.entity';
+import { TaskService } from './service/task.service';
 
 @Module({
   imports:[

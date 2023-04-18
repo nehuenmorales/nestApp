@@ -1,5 +1,5 @@
 import { IsString } from "class-validator";
-import{Status} from "./task.entity"
+import{Status} from "../entities/task.entity"
 
 export class createTaskDto {
     @IsString()
