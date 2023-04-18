@@ -5,6 +5,7 @@ import { TaskController } from './task/task.controller';
 import { TaskModule } from './task/task.module';
 import { task } from './task/task.entity';
 import { TaskService } from './task/task.service';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -30,7 +31,8 @@ import { TaskService } from './task/task.service';
       envFilePath: '.env',
       isGlobal: true,
     }),
-    TaskModule
+    TaskModule,
+    UserModule
   ],
   controllers: [],
   providers: [],
