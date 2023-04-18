@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { createTaskDto } from './create-task.dto';
 import { task } from './task.entity';
+import { updateTaskDto } from './update-task.dto';
 
 @Injectable()
 export class TaskService {
@@ -26,6 +27,10 @@ export class TaskService {
         return this.userRepo.findOne({where:{
             id
         }})
+    }
+
+    updateTask(id : number, updateTask : updateTaskDto){
+        return this.userRepo.update({id}, updateTask)
     }
 
 }
