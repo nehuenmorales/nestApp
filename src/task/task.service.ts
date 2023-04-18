@@ -22,6 +22,10 @@ export class TaskService {
         return this.userRepo.save(task);
     }
 
-    
+    getOneTask(id : number){
+        return this.userRepo.findOne({where:{
+            id
+        }})
+    }
 
 }
