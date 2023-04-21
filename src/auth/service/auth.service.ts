@@ -10,7 +10,8 @@ import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
-    constructor(@InjectRepository(User) private userRepo : Repository<User>, private jwtService : JwtService){}
+    constructor(@InjectRepository(User) private userRepo : Repository<User>, 
+    private jwtService : JwtService){}
 
 
     async register(user : RegisterAuthDto){
