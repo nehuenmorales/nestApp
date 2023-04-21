@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { TaskController } from './task/controller/task.controller';
 import { TaskModule } from './task/task.module';
 import { task } from './task/entities/task.entity';
-import { TaskService } from './task/service/task.service';
 import { UserModule } from './user/user.module';
 import { User } from './user/entities/user.entity';
+import { AuthModule } from './auth/auth.module';
+
 
 @Module({
   imports: [
@@ -33,7 +33,8 @@ import { User } from './user/entities/user.entity';
       isGlobal: true,
     }),
     TaskModule,
-    UserModule
+    UserModule,
+    AuthModule
   ],
   controllers: [],
   providers: [],
