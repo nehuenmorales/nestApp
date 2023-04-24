@@ -1,8 +1,10 @@
-import { Controller, Get, Post, Body, Param, Patch} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Patch, UseGuards} from '@nestjs/common';
 import { task } from '../entities/task.entity';
 import { TaskService } from '../service/task.service';
 import { updateTaskDto } from '../dto/update-task.dto';
+import { JwtAuthGuard } from 'src/auth/jwt/jwt-auth.guard';
 
+@UseGuards(JwtAuthGuard)
 @Controller('task')
 export class TaskController {
 
