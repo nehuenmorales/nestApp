@@ -13,7 +13,7 @@ export class TaskService {
         @InjectRepository(task) private userRepo : Repository<task>
     ){}
 
-    getTasks(){
+    getTasks(): Promise <task[]>{
         return this.userRepo.find();
     }
 
