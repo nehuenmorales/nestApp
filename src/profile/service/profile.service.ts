@@ -10,4 +10,8 @@ export class ProfileService {
     getAllProfile(){
         return this.profileRepo.find()
     }
+
+    getProfileById(id: number){
+        return this.profileRepo.find({where: {id}})
+    }
 }
