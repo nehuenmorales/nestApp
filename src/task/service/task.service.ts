@@ -7,30 +7,26 @@ import { updateTaskDto } from '../dto/update-task.dto';
 
 @Injectable()
 export class TaskService {
+  constructor(@InjectRepository(task) private userRepo: Repository<task>) {}
 
+  getTasks(): Promise<task[]> {
+    return this.userRepo.find();
+  }
 
-    constructor(
-        @InjectRepository(task) private userRepo : Repository<task>
-    ){}
+  createTask(newTask: createTaskDto) {
+    const task = this.userRepo.create(newTask);
+    return this.userRepo.save(task);
+  }
 
-    getTasks(): Promise <task[]>{
-        return this.userRepo.find();
-    }
+  getOneTask(id: number) {
+    return this.userRepo.findOne({
+      where: {
+        id,
+      },
+    });
+  }
 
-
-    createTask(newTask: createTaskDto){
-        const task = this.userRepo.create(newTask)
-        return this.userRepo.save(task);
-    }
-
-    getOneTask(id : number){
-        return this.userRepo.findOne({where:{
-            id
-        }})
-    }
-
-    updateTask(id : number, updateTask : updateTaskDto){
-        return this.userRepo.update({id}, updateTask)
-    }
-
+  updateTask(id: number, updateTask: updateTaskDto) {
+    return this.userRepo.update({ id }, updateTask);
+  }
 }

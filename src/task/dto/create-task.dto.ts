@@ -1,13 +1,13 @@
-import { IsString } from "class-validator";
-import{Status} from "../entities/task.entity"
+import { IsString } from 'class-validator';
+import { Status } from '../entities/task.entity';
 
 export class createTaskDto {
-    @IsString()
-    title:string
+  @IsString()
+  title: string;
 
-    @IsString()
-    description: string
+  @IsString()
+  description: string;
 
-    @IsString()
-    status: Status
+  @IsString()
+  status: Status;
 }

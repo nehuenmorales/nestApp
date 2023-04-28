@@ -1,22 +1,22 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-export enum Status{
-    PENDING = 'PENDING',
-    IN_PROGRES = 'IN_PROGRES',
-    DONE = 'DONE'
+export enum Status {
+  PENDING = 'PENDING',
+  IN_PROGRES = 'IN_PROGRES',
+  DONE = 'DONE',
 }
 
 @Entity()
 export class task {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    title: string
+  @Column()
+  title: string;
 
-    @Column()
-    description: string
+  @Column()
+  description: string;
 
-    @Column()
-    status: Status
+  @Column()
+  status: Status;
 }
