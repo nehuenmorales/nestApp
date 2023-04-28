@@ -7,11 +7,16 @@ import { Profile } from '../entities/profile.entity';
 export class ProfileService {
     constructor  (@InjectRepository(Profile) private profileRepo : Repository<Profile>){}
 
-    getAllProfile(){
-        return this.profileRepo.find()
+    async getAllProfile(){
+        return await this.profileRepo.find()
     }
 
-    getProfileById(id: number){
-        return this.profileRepo.find({where: {id}})
+    async getProfileById(id: number){
+        return await this.profileRepo.find({where: {id}})
+    }
+
+    async create(objet : any){
+        const newProfile =  await this.profileRepo.create(objet)
+        return await this.profileRepo.save(newProfile)
     }
 }
