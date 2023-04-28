@@ -6,6 +6,8 @@ import { task } from './task/entities/task.entity';
 import { UserModule } from './user/user.module';
 import { User } from './user/entities/user.entity';
 import { AuthModule } from './auth/auth.module';
+import { ProfileModule } from './profile/profile.module';
+import { Profile } from './profile/entities/profile.entity';
 
 @Module({
   imports: [
@@ -20,7 +22,7 @@ import { AuthModule } from './auth/auth.module';
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_NAME'),
         // entities: [__dirname + '/**/**/*.entity{.ts,.js}'],
-        entities: [task, User],
+        entities: [task, User, Profile],
         synchronize: true,
         retryDelay: 3000,
         retryAttempts: 10,
@@ -35,6 +37,7 @@ import { AuthModule } from './auth/auth.module';
     TaskModule,
     UserModule,
     AuthModule,
+    ProfileModule,
   ],
   controllers: [],
   providers: [],
