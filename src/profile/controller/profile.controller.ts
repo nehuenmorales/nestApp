@@ -17,6 +17,6 @@ export class ProfileController {
 
     @Post()
     create(@Body() objet : any){
-        
+        return this.profileService.create(objet)
     }
 }
