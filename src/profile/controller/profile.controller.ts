@@ -10,10 +10,12 @@ export class ProfileController {
         return this.profileService.getAllProfile()
     }
 
+
     @Get(':id')
     getById(@Param() id : number){
         return this.profileService.getProfileById(id)
     }
+    
 
     @Post()
     create(@Body() objet : any){

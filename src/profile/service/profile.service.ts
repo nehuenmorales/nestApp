@@ -8,15 +8,15 @@ export class ProfileService {
     constructor  (@InjectRepository(Profile) private profileRepo : Repository<Profile>){}
 
     async getAllProfile(){
-        return await this.profileRepo.find()
+        return await this.profileRepo.find();
     }
 
     async getProfileById(id: number){
-        return await this.profileRepo.find({where: {id}})
+        return await this.profileRepo.find({where: {id}});
     }
 
     async create(objet : any){
-        const newProfile =  await this.profileRepo.create(objet)
-        return await this.profileRepo.save(newProfile)
+        const newProfile =  await this.profileRepo.create(objet);
+        return await this.profileRepo.save(newProfile);
     }
 }
